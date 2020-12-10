@@ -2,13 +2,19 @@
 
 from odoo import models, fields, api
 
-class accounting(models.Model):
-    _name = 'accounting'
+class sell(models.Model):
+    _name = 'sell'
     _description = 'all money flow'
 
-    productname = fields.Char(  #สินค้าที่ขาย
-        string='Productname',
-        required=True,
+
+    product_id = fields.One2many(  
+        comodel_name='product',
+        string='product',
+        inverse_name='sell_id'
+    )
+    product_name = fields.Char(  #สินค้าที่ขาย
+        string='name',
+        related='product_id.name',
     )
     unitprice = fields.Float(  #ราคาต่อหน่วย
         string='Unitprice',

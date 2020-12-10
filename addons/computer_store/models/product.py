@@ -10,7 +10,7 @@ class product(models.Model):
         string='Product Name', 
         required=True,
     )
-    picture = fields.Char() #รูปภ่าพ
+    picture = fields.Image()
     brand = fields.Char(  #ยี่ห้อของสินค้า
         string='brand Product',
         required=True,
@@ -44,3 +44,4 @@ class product(models.Model):
         string='Orderdate',
         required=True,
     )
+    

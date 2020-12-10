@@ -18,9 +18,9 @@
 
     actions opening views on models
 
-    <record model="ir.actions.act_window" id="accounting_action_window">
-      <field name="name">accounting</field>
-      <field name="res_model">accounting</field>
+    <record model="ir.actions.act_window" id="sell_action_window">
+      <field name="name">sell</field>
+      <field name="res_model">sell</field>
       <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="component_action_window">
@@ -41,7 +41,7 @@
 
     menu categories
 
-    <menuitem name="accounting" id="computer_store.menu_1" parent="computer_store.menu_root" action="accounting_action_window"/>
+    <menuitem name="sell" id="computer_store.menu_1" parent="computer_store.menu_root" action="sell_action_window"/>
     <menuitem name="seller" id="computer_store.menu_2" parent="computer_store.menu_root" action="seller_action_window"/>
     <menuitem name="product" id="computer_store.menu_3" parent="computer_store.menu_root"/>
 
