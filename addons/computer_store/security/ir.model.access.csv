@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_computer_accounting,computer_accounting,model_accounting,base.group_user,1,1,1,1
+access_computer_component,computer_component,model_component,base.group_user,1,1,1,1
+access_computer_product,computer_product,model_product,base.group_user,1,1,1,1
+access_computer_seller,computer_seller,model_seller,base.group_user,1,1,1,1

@@ -1,0 +1,96 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record id="view_plot_tree" model="ir.ui.view">
+      <field name="name">plot.tree</field>
+      <field name="model">plot</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="plot_type"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="view_plot_form" model="ir.ui.view">
+      <field name="name">plot.form</field>
+      <field name="model">plot</field>
+      <field name="arch" type="xml">
+        <form string="Plot">
+          <header>
+            <button name="process" type="object" string="Process" class="oe_highlight" attrs="{'invisible':[('state', '!=', 'draft')]}" />
+            <button name="set_status" type="object" string="Set Status" attrs="{'invisible':[('state', '!=', 'process')]}" />
+            <field name='state' widget='statusbar' statusbar_visible='draft,process' />
+          </header>
+          <sheet>
+            <group>
+                <group>
+                    <field name="name"/>
+                    <field name="plot_type"/>
+                    <field name="slot_size"/>
+                </group>
+                <group>
+                    <field name="gardener_ids"/>
+                    <field name="avail_slot_count"/>
+                    <field name="use_slot_count"/>
+                    <field name="slot_ids">
+                      <tree 
+                      decoration-success="is_blue == True and is_yellow == True" 
+                      decoration-info="is_blue == True and is_yellow == False" 
+                      decoration-warning="is_yellow == True and is_blue == False">
+                        <field name="name" />
+                        <field name="is_blue" />
+                        <field name="is_yellow" />
+                      </tree>
+                    </field>
+                </group>
+            </group>
+          </sheet>
+          <div class='oe_chatter'>
+            <field name="message_follower_ids" widget="mail_followers" />
+            <field name="message_ids" widget="mail_thread" />
+            <field name="activity_ids" widget="mail_activity" />
+          </div>
+        </form>
+      </field>
+    </record>
+
+    <record id="view_plot_search" model="ir.ui.view">
+      <field name="name">plot.search</field>
+      <field name="model">plot</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="plot_type"/>
+        </search>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record id="action_plot" model="ir.actions.act_window">
+      <field name="name">Plot</field>
+      <field name="res_model">plot</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem id="garden.menu_garden_root" name="Garden"/>
+
+    <!-- menu categories -->
+
+    <menuitem id="menu_my_garden"  
+      name="My Garden"
+      parent="garden.menu_garden_root" 
+      action="garden.action_plot"/>
+    <menuitem id="menu_garden_manager"  
+      name="Management"
+      parent="garden.menu_garden_root" 
+    />
+    <menuitem id="menu_garden_user"  
+      name="Gardener"
+      parent="garden.menu_garden_root" 
+      action="contacts.action_contacts"/>
+  </data>
+</odoo>

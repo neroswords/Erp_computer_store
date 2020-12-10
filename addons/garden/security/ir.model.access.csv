@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_garden_gardener,garden.gardener,model_gardener,base.group_user,1,1,1,1
+access_garden_plot,garden.plot,model_plot,base.group_user,1,1,1,1
+access_garden_slot,garden.slot,model_slot,base.group_user,1,1,1,1
+access_garden_plot_set_status,garden.plot.set.status,model_plot_set_status,base.group_user,1,1,1,1
+access_garden_plot_set_status_line,garden.plot.set.status.line,model_plot_set_status_line,base.group_user,1,1,1,1
+access_garden_plot_set_status_line,garden.plot.set.status.line,model_plot_set_status_line,base.group_user,1,1,1,1
+access_garden_plot2,garden.plot2_user,model_plot2,base.group_user,1,1,1,1
+access_garden_slot2,garden.slot2_user,model_slot2,base.group_user,1,1,1,1

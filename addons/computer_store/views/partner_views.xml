@@ -1,0 +1,72 @@
+<!-- <odoo>
+
+    <record id="partner_manager_form_view" model="ir.ui.view">
+        <field name="name">partner_manager</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form">
+          <field name="arch" type="xml">
+              <notebook position="inside">
+                  <page string="Manager">
+                      <group>
+                          <field name="manager"/>
+                      </group>
+                  </page>
+              </notebook>
+          </field>
+        </field>
+    </record>
+
+    actions opening views on models
+
+    <record model="ir.actions.act_window" id="accounting_action_window">
+      <field name="name">accounting</field>
+      <field name="res_model">accounting</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="component_action_window">
+      <field name="name">component</field>
+      <field name="res_model">component</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="product_action_window">
+      <field name="name">product</field>
+      <field name="res_model">product</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="seller_action_window">
+      <field name="name">seller</field>
+      <field name="res_model">res.partner</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    menu categories
+
+    <menuitem name="accounting" id="computer_store.menu_1" parent="computer_store.menu_root" action="accounting_action_window"/>
+    <menuitem name="seller" id="computer_store.menu_2" parent="computer_store.menu_root" action="seller_action_window"/>
+    <menuitem name="product" id="computer_store.menu_3" parent="computer_store.menu_root"/>
+
+
+    <menuitem name="product data" id="computer_store.menu_3_list" parent="computer_store.menu_3"
+              action="product_action_window"/>
+    <menuitem name="spec component" id="computer_store.menu_3_list" parent="computer_store.menu_3"
+              action="component_action_window"/>
+</odoo> -->
+
+<odoo>
+  <data>
+    <record id="_manager_view_partner_form" model="ir.ui.view">
+      <field name="name">manager_partner</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form" />
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='vat']" position="after">
+          <field name="manager" />
+        </xpath>
+        <xpath expr="//notebook" position="inside">
+            <page name="manager"> 
+            </page>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
