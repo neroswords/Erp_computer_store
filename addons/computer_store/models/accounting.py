@@ -10,7 +10,7 @@ productname = fields.Char(  #สินค้าที่ขาย
     string='Productname',
     required=True,
     )
-ีunitprice = fields.Float(  #ราคาต่อหน่วย
+unitprice = fields.Float(  #ราคาต่อหน่วย
     string='Unitprice',
     required=True,
        )
