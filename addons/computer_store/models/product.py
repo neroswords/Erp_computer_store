@@ -33,7 +33,7 @@ class product(models.Model):
     )
     Total = fields.Float(  #จำนวนสินค้าทุกรายการในบัญชี
         string='Total',
-        inverse='_total',
+        compute='_total',
     )
     component_id = fields.One2many(  #ชิ้นส่วนของ product
         comodel_name='component',
@@ -48,15 +48,7 @@ class product(models.Model):
         string='Orderdate',
         required=True,
     )
-<<<<<<< HEAD
-    orderdate2 = fields.Char(  #วันที่สั่งซื้อ
-        string='Orderdate2',
-        required=True,
-    )
     @api.depends('Total')
     def _total(self):
         for rec in self:
             rec.Total = rec.saleprice * rec.count 
-=======
-    
->>>>>>> b1d65746e9e05b994d079501f3235ea82e0e1e1c
