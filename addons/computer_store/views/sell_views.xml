@@ -3,11 +3,11 @@
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="computer_store.list">
-      <field name="name">accounting</field>
-      <field name="model">accounting</field>
+      <field name="name">sell</field>
+      <field name="model">sell</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="productname"/>
+          <field name="product_name"/>
           <field name="unitprice"/>
         </tree>
       </field>
@@ -16,11 +16,11 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="accounting_action_window">
-      <field name="name">accounting</field>
-      <field name="res_model">accounting</field>
+    <!-- <record model="ir.actions.act_window" id="sell_action_window">
+      <field name="name">sell</field>
+      <field name="res_model">sell</field>
       <field name="view_mode">tree,form</field>
-    </record>
+    </record> -->
     <record model="ir.actions.act_window" id="component_action_window">
       <field name="name">component</field>
       <field name="res_model">component</field>
@@ -60,15 +60,16 @@
 
     <!-- menu categories -->
 
-    <menuitem name="accounting" id="computer_store.menu_1" parent="computer_store.menu_root" action="accounting_action_window"/>
-    <menuitem name="seller" id="computer_store.menu_2" parent="computer_store.menu_root" action="seller_action_window"/>
+    <!-- <menuitem name="sell" id="computer_store.menu_1" parent="computer_store.menu_root" action="sell_action_window"/> -->
     <menuitem name="product" id="computer_store.menu_3" parent="computer_store.menu_root"/>
+    <menuitem name="seller" id="computer_store.menu_2" parent="computer_store.menu_root" action="seller_action_window"/>
+    
 
     <!-- actions -->
 
-    <menuitem name="product data" id="computer_store.menu_3_list" parent="computer_store.menu_3"
+    <menuitem name="product data" id="computer_store.menu_3_list1" parent="computer_store.menu_3"
               action="product_action_window"/>
-    <menuitem name="spec component" id="computer_store.menu_3_list" parent="computer_store.menu_3"
+    <menuitem name="spec component" id="computer_store.menu_3_list2" parent="computer_store.menu_3"
               action="component_action_window"/>
     <!-- <menuitem name="Server to list" id="computer_store" parent="computer_store.menu_2"
               action="computer_store.action_server"/> -->

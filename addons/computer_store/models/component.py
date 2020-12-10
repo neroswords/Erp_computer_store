@@ -8,7 +8,7 @@ class component(models.Model):
         string='Component name', 
         required=True,
     )
-    picture = fields.Char() #รูปภ่าพ
+    picture = fields.Image() #รูปภ่าพ
     brand = fields.Char(  #ยี่ห้อชิ้นส่วน
         string='Brand of product',
         required=True,

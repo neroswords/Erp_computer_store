@@ -10,7 +10,7 @@ class product(models.Model):
         string='Product Name', 
         required=True,
     )
-    picture = fields.Char() #รูปภ่าพ
+    picture = fields.Image()
     brand = fields.Char(  #ยี่ห้อของสินค้า
         string='brand Product',
         required=True,
@@ -48,6 +48,7 @@ class product(models.Model):
         string='Orderdate',
         required=True,
     )
+<<<<<<< HEAD
     orderdate2 = fields.Char(  #วันที่สั่งซื้อ
         string='Orderdate2',
         required=True,
@@ -56,3 +57,6 @@ class product(models.Model):
     def _total(self):
         for rec in self:
             rec.Total = rec.saleprice * rec.count 
+=======
+    
+>>>>>>> b1d65746e9e05b994d079501f3235ea82e0e1e1c
