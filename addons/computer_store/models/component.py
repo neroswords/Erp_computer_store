@@ -9,6 +9,7 @@ name = fields.Char( #ชื่อของชิ้นส่วน
     string='Component name', 
     required=True,
     )
+ picture = fields.Char() #รูปภ่าพ
 brand = fields.Char(  #ยี่ห้อชิ้นส่วน
     string='Brand of product',
     required=True,
