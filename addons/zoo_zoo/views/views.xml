@@ -1,0 +1,67 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="zoo_zoo">
+      <field name="name">zooZoo list</field>
+      <field name="model">zoo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="zoo_zoo.action_window">
+      <field name="name">zooZoo</field>
+      <field name="res_model">zoo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <record model="ir.actions.act_window" id="zoo_keeper.action_window">
+      <field name="name">Keeper</field>
+      <field name="res_model">keeper</field>
+      <field name="view_mode">tree,form</field>
+    </record> -->
+
+
+    <!-- server action to the one above -->
+
+    <!-- <record model="ir.actions.server" id="zoo_zoo.action_server">
+      <field name="name">zooZoo server</field>
+      <field name="model_id" ref="model_keeper"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="zooZoo" id="zoo_zoo.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="zoo_zoo.menu_1" parent="zoo_zoo.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="zoo_zoo.menu_1_list" parent="zoo_zoo.menu_1"
+              action="zoo_zoo.action_window"/>
+    <menuitem name="keeper" id="zoo_zoo.menu_1_list" parent="zoo_zoo.menu_1"
+              action="action_keeper"/>
+    <!-- <menuitem name="Server to list" id="zoo_keeper" parent="zoo_zoo.menu_2"
+              action="zoo_zoo.action_server"/> -->
+
+  </data>
+</odoo>

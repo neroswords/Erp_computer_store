@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <record id="action_keeper" model="ir.actions.act_window" >
+        <field name="name">keeper</field>
+        <field name="res_model">keeper</field>
+        <field name="view_mode">tree,form</field>
+        </record>
+        <record id="action_animal" model="ir.actions.act_window" >
+        <field name="name">animal</field>
+        <field name="res_model">animal</field>
+        <field name="view_mode">tree,form</field>
+        </record>
+        <record id="action_zone" model="ir.actions.act_window" >
+        <field name="name">zone</field>
+        <field name="res_model">zone</field>
+        <field name="view_mode">tree,form</field>
+        </record>
+        <record id="action_cage" model="ir.actions.act_window" >
+        <field name="name">cage</field>
+        <field name="res_model">cage</field>
+        <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Animal" id="zoo_zoo.menu_1" parent="zoo_zoo.menu_root" action="action_animal"/>
+        <menuitem name="Cage" id="zoo_zoo.menu_2" parent="zoo_zoo.menu_root" action="action_cage"/>
+        <menuitem name="Zone" id="zoo_zoo.menu_3" parent="zoo_zoo.menu_root" action="action_zone"/>
+        <menuitem name="Zoo keeper" id="zoo_zoo.menu_4" parent="zoo_zoo.menu_root" action="action_keeper"/>
+
+
+    </data>
+</odoo>

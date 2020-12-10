@@ -1,0 +1,91 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <!-- <record model="ir.ui.view" id="keeper_list" >
+      <field name="name">keeper</field>
+      <field name="model">keeper</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="surname"/>
+        </tree>
+      </field>
+    </record> -->
+
+
+    <!-- actions opening views on models -->
+
+    <!-- <record model="ir.actions.act_window" id="zoo_zoo.action_window">
+      <field name="name">zooZoo window</field>
+      <field name="res_model">zoo</field>
+      <field name="view_mode">tree,form</field>
+    </record> -->
+
+    <!-- <record model="ir.actions.act_window" id="zoo_zoo.action_window">
+      <field name="name">keeper</field>
+      <field name="res_model">keeper</field>
+      <field name="view_mode">tree,form</field>
+    </record> -->
+    <record id="action_keeper" model="ir.actions.act_window" >
+      <field name="name">keeper</field>
+      <field name="res_model">keeper</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_animal" model="ir.actions.act_window" >
+      <field name="name">animal</field>
+      <field name="res_model">animal</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_zone" model="ir.actions.act_window" >
+      <field name="name">zone</field>
+      <field name="res_model">zone</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_cage" model="ir.actions.act_window" >
+      <field name="name">cage</field>
+      <field name="res_model">cage</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- server action to the one above -->
+
+    <!-- <record model="ir.actions.server" id="zoo_zoo.action_server">
+      <field name="name">zooZoo server</field>
+      <field name="model_id" ref="model_keeper"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="zooZoo" id="zoo_zoo.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Animal" id="zoo_zoo.menu_1" parent="zoo_zoo.menu_root" action="action_animal"/>
+    <menuitem name="Cage" id="zoo_zoo.menu_2" parent="zoo_zoo.menu_root" action="action_cage"/>
+    <menuitem name="Zone" id="zoo_zoo.menu_3" parent="zoo_zoo.menu_root" action="action_zone"/>
+    <menuitem name="Zoo keeper" id="zoo_zoo.menu_4" parent="zoo_zoo.menu_root" action="action_keeper"/>
+
+
+    <!-- actions -->
+
+    <!-- <menuitem name="List" id="zoo_zoo.menu_1_list" parent="zoo_zoo.menu_1"
+              action="zoo_zoo.action_window"/>
+    <menuitem name="keeper" id="zoo_zoo" parent="zoo_zoo.menu_1"
+              action="action_keeper"/> -->
+    <!-- <menuitem name="Server to list" id="zoo_zoo" parent="zoo_zoo.menu_2"
+              action="zoo_zoo.action_server"/> -->
+
+  </data>
+</odoo>
