@@ -37,3 +37,4 @@ class sell(models.Model):
         required=True,
     )
 
+def 

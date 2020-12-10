@@ -46,6 +46,12 @@ class product(models.Model):
     #     string='product',
     # )
     component_id = fields.One2many(
+    Total = fields.Float(  #จำนวนสินค้าทุกรายการในบัญชี
+        string='Total',
+        compute='_total',
+    )
+    
+    component_id = fields.One2many(  #ชิ้นส่วนของ product
         comodel_name='component',
         string='component',
         inverse_name='product_id'
@@ -57,3 +63,7 @@ class product(models.Model):
     component_qty = fields.Integer(
         string='Quantity'
     )
+    @api.depends('Total')
+    def _total(self):
+        for rec in self:
+            rec.Total = rec.saleprice * rec.count 
