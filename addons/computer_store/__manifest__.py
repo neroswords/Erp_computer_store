@@ -29,6 +29,8 @@
         'views/templates.xml',
         'views/accounting_views.xml',
         'views/manager_views.xml',
+        'views/component_views.xml',
+        'views/product_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
