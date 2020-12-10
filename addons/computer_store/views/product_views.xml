@@ -20,7 +20,6 @@
       <field name="arch" type="xml">
         <form string="Product">
           <sheet>
-            <group>
               <group>
                 <field name="name"/>
                 <field name="brand"/>
@@ -33,8 +32,7 @@
                 <field name="saleprice"/>
                 <field name="orderdate"/>
               </group>
-              <field name="component_id"/>
-            </group>
+              <field name="component_id" editable="top"/>
           </sheet>
         </form>
       </field>

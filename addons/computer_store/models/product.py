@@ -31,7 +31,21 @@ class product(models.Model):
         string='Cost',
         required=True,
     )
-    component_id = fields.One2many(  #ชิ้นส่วนของ product
+    # product_line = fields.One2many(
+    #     'product_line',
+    #     'product_id',
+    #     string="Component"
+
+    # )
+    orderdate = fields.Char(  #วันที่สั่งซื้อ
+        string='Orderdate',
+        required=True,
+    )
+    # product_id = fields.Many2one(
+    #     comodel_name='product',
+    #     string='product',
+    # )
+    component_id = fields.One2many(
         comodel_name='component',
         string='component',
         inverse_name='product_id'
@@ -40,8 +54,6 @@ class product(models.Model):
         string='component name',
         related='component_id.name',
     )
-    orderdate = fields.Char(  #วันที่สั่งซื้อ
-        string='Orderdate',
-        required=True,
+    component_qty = fields.Integer(
+        string='Quantity'
     )
-    
