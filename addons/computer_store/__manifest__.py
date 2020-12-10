@@ -29,11 +29,8 @@
         'views/templates.xml',
         'views/accounting_views.xml',
         'views/manager_views.xml',
-<<<<<<< HEAD
-=======
         'views/component_views.xml',
         'views/product_views.xml',
->>>>>>> a52d3ec11b94cf789b02e20d08b9882d45128d06
     ],
     # only loaded in demonstration mode
     'demo': [
