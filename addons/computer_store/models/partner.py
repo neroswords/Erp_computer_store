@@ -8,4 +8,5 @@ class partner(models.Model):
 
     manager = fields.Boolean(
         name='Manager',
+        default = False
     )
