@@ -1,0 +1,78 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <!-- <record model="ir.ui.view" id="computer_store.list">
+      <field name="name">accounting</field>
+      <field name="model">accounting</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record> -->
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="accounting_action_window">
+      <field name="name">accounting</field>
+      <field name="res_model">accounting</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="component_action_window">
+      <field name="name">component</field>
+      <field name="res_model">component</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="product_action_window">
+      <field name="name">product</field>
+      <field name="res_model">product</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="seller_action_window">
+      <field name="name">seller</field>
+      <field name="res_model">seller</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="computer_store.action_server">
+      <field name="name">computer_store server</field>
+      <field name="model_id" ref="model_computer_store_computer_store"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <!-- <menuitem name="computer_store" id="computer_store.menu_root"/> -->
+
+    <!-- menu categories -->
+
+    <menuitem name="accounting" id="computer_store.menu_1" parent="computer_store.menu_root" action="accounting_action_window"/>
+    <menuitem name="seller" id="computer_store.menu_2" parent="computer_store.menu_root" action="seller_action_window"/>
+    <menuitem name="product" id="computer_store.menu_3" parent="computer_store.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="product data" id="computer_store.menu_3_list" parent="computer_store.menu_1"
+              action="product_action_window"/>
+    <menuitem name="spec component" id="computer_store.menu_3_list" parent="computer_store.menu_1"
+              action="component_action_window"/>
+    <!-- <menuitem name="Server to list" id="computer_store" parent="computer_store.menu_2"
+              action="computer_store.action_server"/> -->
+
+  </data>
+</odoo>
