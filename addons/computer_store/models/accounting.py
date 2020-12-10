@@ -31,3 +31,4 @@ class accounting(models.Model):
         required=True,
     )
 
+def 
