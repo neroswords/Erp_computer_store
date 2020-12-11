@@ -29,7 +29,7 @@ class product(models.Model):
     )
     cost = fields.Float( #ต้นทุนที่รับมา
         string='Cost',
-        required=True,
+        related='component_id.cost',
     )
     # product_line = fields.One2many(
     #     'product_line',
@@ -45,7 +45,7 @@ class product(models.Model):
     #     comodel_name='product',
     #     string='product',
     # )
-    component_id = fields.One2many(
+
     Total = fields.Float(  #จำนวนสินค้าทุกรายการในบัญชี
         string='Total',
         compute='_total',
@@ -60,10 +60,11 @@ class product(models.Model):
         string='component name',
         related='component_id.name',
     )
-    component_qty = fields.Integer(
-        string='Quantity'
-    )
+    # component_qty = fields.Integer(
+    #     string='Quantity'
+    # )
+
     @api.depends('Total')
     def _total(self):
-        for rec in self:
-            rec.Total = rec.saleprice * rec.count 
+        for rec in self.component_id:
+            self.Total += rec.cost

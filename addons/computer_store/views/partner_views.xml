@@ -1,14 +1,14 @@
 <!-- <odoo>
 
-    <record id="partner_manager_form_view" model="ir.ui.view">
-        <field name="name">partner_manager</field>
+    <record id="partner_creator_form_view" model="ir.ui.view">
+        <field name="name">partner_creator</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form">
           <field name="arch" type="xml">
               <notebook position="inside">
-                  <page string="Manager">
+                  <page string="creator">
                       <group>
-                          <field name="manager"/>
+                          <field name="creator"/>
                       </group>
                   </page>
               </notebook>
@@ -54,16 +54,16 @@
 
 <odoo>
   <data>
-    <record id="_manager_view_partner_form" model="ir.ui.view">
-      <field name="name">manager_partner</field>
+    <record id="_creator_view_partner_form" model="ir.ui.view">
+      <field name="name">creator_partner</field>
       <field name="model">res.partner</field>
       <field name="inherit_id" ref="base.view_partner_form" />
       <field name="arch" type="xml">
         <xpath expr="//field[@name='vat']" position="after">
-          <field name="manager" />
+          <field name="creator" />
         </xpath>
         <xpath expr="//notebook" position="inside">
-            <page name="manager"> 
+            <page name="creator"> 
             </page>
         </xpath>
       </field>

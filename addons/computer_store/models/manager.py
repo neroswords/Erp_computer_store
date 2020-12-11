@@ -7,7 +7,7 @@ class manage(models.Model):
     _inherit = 'seller'
 
     
-    is_manager = fields.Boolean(
-        name='manager',
+    is_creator = fields.Boolean(
+        name='creator',
         default = False
     )

@@ -4,6 +4,7 @@ from odoo import models, fields, api
 class component(models.Model):
     _name = 'component'
     _description = 'component for computer'
+
     name = fields.Char( #ชื่อของชิ้นส่วน
         string='Component name', 
         required=True,

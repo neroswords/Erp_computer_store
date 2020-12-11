@@ -26,7 +26,6 @@
               <group>
                 <field name="name"/>
                 <field name="brand"/>
-                <field name="cost"/>
                 <field name="vendor"/>
               </group>
               <group>
@@ -35,7 +34,13 @@
                 <field name="saleprice"/>
                 <field name="orderdate"/>
               </group>
-              <field name="component_id" editable="top"/>
+              <notebook>
+                <page string="Component">
+                  <tree editable="top">
+                    <field name="component_id"/>
+                  </tree>
+                </page>
+              </notebook>  
           </sheet>
         </form>
       </field>
